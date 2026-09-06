@@ -32,6 +32,31 @@ the continuum is ~1. Column names are auto-detected (`freq_uHz`/`freq`/
 `--freq-col`/`--power-col`. Any background-fitting tool works for
 producing it (e.g. your own Harvey-profile fit, pySYD, ...).
 
+## Try it on real data
+
+The `examples/` directory ships a ready-made session for the Kepler
+subgiant KIC 10972873: a background-normalized short-cadence spectrum
+trimmed to the oscillation window, and 31 tagged modes with tuned
+Δν/ε_p/ΔΠ₁/q. All parameters (including ν_max) are restored from the
+saved session, so no flags are needed:
+
+```
+cd examples
+clickelle init KIC10972873_snr.csv --star KIC10972873   # inspect / edit the tags
+clickelle fit  KIC10972873_snr.csv --star KIC10972873   # fit them
+```
+
+Press **stretching** in the widget to open the stretched period echelle
+— the l=1 mixed modes (red triangles) line up on the wiggly vertical
+ridge characteristic of a subgiant:
+
+![the clickelle widget on KIC 10972873](docs/widget.png)
+
+The fit takes a few minutes (31 modes in 18 groups, drop-one lnK refits
+included) and recovers 29 detections with a median frequency error of
+0.064 uHz; see the resulting
+[per-group fit panels](docs/groups_fit.png).
+
 ## Step 1: tag modes interactively
 
 ```
