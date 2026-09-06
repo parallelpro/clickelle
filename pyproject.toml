@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clickelle"
+version = "0.1.0"
+description = "Click modes on an echelle diagram, then fit them: an interactive front end for asteroseismic peakbagging"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Yaguang Li" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "jax",
+    "optax",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow"]
+
+[project.urls]
+Homepage = "https://github.com/parallelpro/clickelle"
+
+[project.scripts]
+clickelle = "clickelle.cli:main"
+
+[tool.setuptools]
+packages = ["clickelle"]
