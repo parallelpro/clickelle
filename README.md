@@ -46,12 +46,6 @@ clickelle init KIC10972873_snr.csv --star KIC10972873   # inspect / edit the tag
 clickelle fit  KIC10972873_snr.csv --star KIC10972873   # fit them
 ```
 
-Press **stretching** in the widget to open the stretched period echelle
-— the l=1 mixed modes (red triangles) line up on the wiggly vertical
-ridge characteristic of a subgiant:
-
-![the clickelle widget on KIC 10972873](docs/widget.png)
-
 The fit takes a few minutes (31 modes in 18 groups, drop-one lnK refits
 included) and recovers 29 detections with a median frequency error of
 0.064 uHz; see the resulting
@@ -64,6 +58,13 @@ forest of l=1 mixed modes:
 ```
 clickelle init KIC10272858_snr.csv --star KIC10272858
 ```
+
+Press **stretching** in the widget to open the stretched period echelle
+— the l=1 mixed modes (red triangles), scattered across the frequency
+echelle on the left, collapse onto a single vertical ridge once ΔΠ₁ and
+q are right:
+
+![the clickelle widget on KIC 10272858](docs/widget.png)
 
 ## Step 1: tag modes interactively
 
