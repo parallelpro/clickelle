@@ -57,6 +57,14 @@ included) and recovers 29 detections with a median frequency error of
 0.064 uHz; see the resulting
 [per-group fit panels](docs/groups_fit.png).
 
+A second session is included for the red giant KIC 10272858 (ν_max ≈ 348
+uHz, Δν = 22.7 uHz, ΔΠ₁ = 96 s), with 33 tagged modes and a much denser
+forest of l=1 mixed modes:
+
+```
+clickelle init KIC10272858_snr.csv --star KIC10272858
+```
+
 ## Step 1: tag modes interactively
 
 ```
