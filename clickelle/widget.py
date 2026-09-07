@@ -239,8 +239,10 @@ class EchelleWidget:
         # and click decoding must go through the stack index, not nu/Dnu
         self.n_rows = z.shape[0]
         self.band = (ext[3] - ext[2]) / self.n_rows
-        fmin_snap = 1e-4 if fmin < dnu else fmin - (fmin % dnu)
-        self.k0 = int(np.floor(fmin_snap/dnu + 0.5))
+        # radial order of the bottom row: taken from the lowest frequency
+        # actually folded (ext[2]), NOT from the requested window start --
+        # a spectrum trimmed above fmin starts at a higher order
+        self.k0 = int(np.floor(ext[2] / dnu))
 
         self.ax_ech.clear()
         vmax = np.nanpercentile(z, 99)
